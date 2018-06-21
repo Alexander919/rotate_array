@@ -1,13 +1,16 @@
 window.onload = function () {
+
 function countdown() {
-    let count = document.getElementById('count'), reset;
-    for (let i = 0; i<12; i++) { 
+    let count = document.getElementById('count'), inc = 1;
+    for (let i = 12; i > 0; i--) { 
+        setTimeout(() => {
+            count.innerHTML = i;
+        }, inc*500);
+        inc++;
+    }
     setTimeout(() => {
-        count.innerHTML = i;
-    }, i*500);
-    
-}
-console.log(count.innerHTML);
+        count.innerHTML = '';
+    }, 6500);
 }
 function display(str) {
     let h1 = document.getElementById('rotate');
@@ -40,6 +43,7 @@ function rotate(str) {
     arrOfarrs.unshift(arr);
     print(arrOfarrs);
 }
+    
 let strToRotate = 'Hello_World!';
 rotate(strToRotate);
 }
