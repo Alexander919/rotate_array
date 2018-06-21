@@ -1,16 +1,17 @@
 window.onload = function () {
-
+    let strToRotate = 'Sanitarium';
+    let t = 350;
 function countdown(len) {
     let count = document.getElementById('count'), inc = 1;
     for (let i = len; i > 0; i--) { 
         setTimeout(() => {
             count.innerHTML = `< < ${i} > >`;
-        }, inc*500);
-        inc++;
+        }, inc*t);
+        inc++; 
     }
     setTimeout(() => {
         count.innerHTML = '';
-    }, (len / 2 * 1000 + 500));
+    }, (len / 2 * t*2 + t));
 }
 function display(str) {
     let h1 = document.getElementById('rotate');
@@ -21,9 +22,9 @@ function print(arrOfarrs) {
         for (let i = 0; i < arrOfarrs.length; i++) {
             setTimeout(() => {
                 display(arrOfarrs[i].join(''));
-            }, i*500);
+            }, i*t);
         }
-    }, arrOfarrs.length*500);
+    }, arrOfarrs.length*t);
 }
 function rotate(str) {
     countdown(str.length);
@@ -43,7 +44,5 @@ function rotate(str) {
     arrOfarrs.unshift(arr);
     print(arrOfarrs);
 }
-    
-let strToRotate = 'Hello_World!';
 rotate(strToRotate);
 }
