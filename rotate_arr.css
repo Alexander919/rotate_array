@@ -4,6 +4,11 @@ h1 {
     font-family: 'Courier New', Courier, monospace, sans-serif;
 
 }
+h2 {
+    font-size: 400%;
+    color: yellow;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
 div {
     text-align: center;
 }
