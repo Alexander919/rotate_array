@@ -1,16 +1,16 @@
 window.onload = function () {
 
-function countdown() {
+function countdown(len) {
     let count = document.getElementById('count'), inc = 1;
-    for (let i = 12; i > 0; i--) { 
+    for (let i = len; i > 0; i--) { 
         setTimeout(() => {
-            count.innerHTML = i;
+            count.innerHTML = `< < ${i} > >`;
         }, inc*500);
         inc++;
     }
     setTimeout(() => {
         count.innerHTML = '';
-    }, 6500);
+    }, (len / 2 * 1000 + 500));
 }
 function display(str) {
     let h1 = document.getElementById('rotate');
@@ -26,7 +26,7 @@ function print(arrOfarrs) {
     }, arrOfarrs.length*500);
 }
 function rotate(str) {
-    countdown();
+    countdown(str.length);
     let arr = str.split(''), arrOfarrs = [], copycrsl;
     for (let i = 0; i < arr.length; i++) {
         let save = arr[0];
@@ -47,6 +47,3 @@ function rotate(str) {
 let strToRotate = 'Hello_World!';
 rotate(strToRotate);
 }
-
-//let arr= [' H','e','l','l','o','_','W', 'o', 'r', 'l', 'd','! '];
-//rotate(arr);
