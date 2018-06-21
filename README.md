@@ -1,1 +1,1 @@
-Rotate array and print the result in the webpage
+Rotate the array in the left direction and animate it as a string in the webpage
